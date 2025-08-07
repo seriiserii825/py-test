@@ -6,4 +6,5 @@ def test_main():
 
 
 def test_main2():
-    assert A.x == 2
+    x = A.x
+    assert x == 2
