@@ -1,10 +1,11 @@
-from tests.src.A import A
+import pytest
+from main import Calculator
 
 
-def test_main():
-    assert 1 == 1
-
-
-def test_main2():
-    x = A.x
-    assert x == 2
+@pytest.mark.parametrize("x, y, res", [
+    (1, 2, 0.5),
+    (2, -4, -0.5),
+    (40, 3, 13.333333333333334),
+])
+def test_divide(x, y, res):
+    assert Calculator().divide(x, y) == res
